@@ -33,6 +33,7 @@ sprint. Ces retours permettent d’améliorer le produit.</br></p>
   <li>Communication => Discord, Gmail</li>
   <li>Documents ressources => Google Drive, GitHub</li>
   <li>Suivi de projet => Zenhub, GanttProject</li>
+  <li>Autres => Miro</li>
   <li>lien vers le drive => https://drive.google.com/drive/folders/1nQtvsgV6fo_mNcNeKZsSM0cWvyej4545?usp=sharing</li>
-  <li>lien vers le zenhub =></li>
+  <li>lien vers le zenhub => https://app.zenhub.com/workspaces/jeu-collaboratif-en-anglais-6344379f3c4d6655554adc8b/board?invite=5WfFDkEekSxoRLATg9eit6eS</li>
   </ul>
