@@ -14,4 +14,10 @@ class Graphe :
             self.racine.ajouterNoeud(indice, questionReponse)
             
 
-    
+    def afficher(self, noATrouver) :
+        
+        if self.racine == None :
+            return "Aucun texte trouvé"
+        else :
+            return self.racine.afficher(noATrouver)
+          

@@ -1,0 +1,30 @@
+1000;The term graphic charter refers to all the elements that define the visual identity of a brand, organisation or company. Do you have a graphic charter ?
+1500;We already have a graphic charter in our company.
+1750;In our company, we have designers. We are able to improve your graphic charter. Would you prefer to keep it or use our services to improve it ?
+1700;We are quite satisfied by our graphic design. We do not feel the need to change it.
+1800;A new graphic charter would be preferable for the restructuring of the site.
+1250;Does your website need to be completed quickly (1 to 3 months) or not (4 to 6 months) ?
+1300;The site should be operational in 3 months maximum.
+1200;The site should be operational within 4 to 6 months.
+500;We do not currently have a graphic charter.
+750;In our company, we have designers. We are able to create a special graphic charter for your company. Would you prefer to use our services or external help to improve it ?
+800;We would prefer to hire your services to draft this graphic charter.
+700;We will call for outside help.
+250;To better understand what a "graphic charter" is and its usefulness to your clients and employees, would you like to arrange a face to face or a zoom meeting to discuss its importance ?
+300;We would be delighted to discuss this with you.
+200;We do not feel the need for this meeting.
+-1000;It is essential to draft up a statement of work to guide the creation of the site. This steering tool is essential for defining the needs and specifications of a project. Have you already draft up a statement of work ?
+-500;We don't have any statement of work at the moment.
+-250;We have a team of experts ready to help you to develop a comprehensive statement of work based on your needs and requirements. How do you plan to design this statement of work ?
+-200;Your team of experts will create the statement of work according to our needs.
+-300;We will create the statement of work ourselves.
+-750;In order to create the site, our team of developers must know your needs. We have 2 options. The first one is to make a specification to save time and exchanges. The second option is to have regular exchanges to follow the project's progress, which takes more time. Which option do you choose ?
+-700;We choose option one to save time.
+-800;We choose the second option. We appoint a full-time employee to the task.
+-1500;We already drafted up a statement of work.
+-1250;Will this statement of work be useful for restructuring your site or creating a new one ?
+-1200;We would like to restructure our site.
+-1300;We would like to create a new site.
+-1750;Responsive Web design is an approach to web design that aims to develop sites that offer an optimal reading and browsing experience for the user regardless of their device range (mobile phones, tablets, e-readers, desktop monitors)(definition found on the internet). Does your site need to be responsive ?
+-1700;Our site will be used on different devices. So it must be responsive.
+-1800;Our site will be used on one type of device only. So it does not need to be responsive.
