@@ -17,8 +17,8 @@ def preparer():
         return(s)
 
 
-def connecter(sockd):
-    coord_S = ('127.0.0.1', 65432)
+def connecter(sockd, ipClient):
+    coord_S = (ipClient, 65432)
     try:
         s.connect(coord_S)
     except ConnectionRefusedError:
@@ -72,20 +72,31 @@ def arreter(s):
     try:
         s.close()
     except OSError:
-        print('Socket still open !')
+        print("---------------\nEND OF THE GAME\n---------------\n")
     else:
-        print('Socket properly closed')
+        print("---------------\nEND OF THE GAME\n---------------\n")
 
 
 # programme principal
-interaction = Interaction.Interaction(Graphe.Graphe())
+interaction = Interaction.Interaction(Graphe.Graphe(), 1)
 indice = 0
+
+ipDevOk = False
+while (not ipDevOk) :
+    ipClient = input('Enter the customer\'s IP address - ')
+    ipDevOk = input("Is the IP address right for you ? (YES OR NO) - ")
+    
+    while (ipDevOk != "YES") :
+        ipClient = input('Enter the customer\'s IP address - ')
+        ipDevOk = input("Is the IP address right for you ? (YES OR NO) - ")
+    
+    ipDevOk = True
 
 nbquestion = 0
 s = preparer()
 on_continue = 0
 if (s != -1):
-    if (connecter(s) == 0):
+    if (connecter(s, ipClient) == 0):
         while (nbquestion != 2):
             nbquestion += 1
             indice = echanger(s, indice)

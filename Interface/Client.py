@@ -15,8 +15,10 @@ def preparer():
         return(-1)
     else:
         # print('Création socket réussie')
-        print(socket.gethostbyname(socket.gethostname()))
-        coord_S = ('127.0.0.1', 65432)
+        print("--------------------------------------------------------------")
+        print("IP address to give to the Web developer - " + socket.gethostbyname(socket.gethostname()))
+        print("--------------------------------------------------------------\n")
+        coord_S = (socket.gethostbyname(socket.gethostname()), 65432)
         try:
             s.bind(coord_S)
         except OSError:
@@ -41,7 +43,7 @@ def accepter(sockd):
     try:
         (s, coord_C)= sockd.accept()
     except OSError:
-        print('accept() failed')
+        print('Failed to connect to Web developer')
         return(-1)
     else:
         # print('accept() réussi pour le client', coord_C)
@@ -93,14 +95,13 @@ def arreter(s, nom):
     try:
         s.close()
     except OSError:
-        print(nom,'still connected !')
-    else:
-        print(nom + " disconnected : end of exchange")
+        print()
+    
 
 
 # programme principal
 
-interaction = Interaction.Interaction(Graphe.Graphe())
+interaction = Interaction.Interaction(Graphe.Graphe(), 0)
 cpt = 0
 s1 = preparer()
 on_continue = 0
@@ -112,3 +113,4 @@ if (s1 != -1 ):
             on_continue = echanger(s2, cpt)
         arreter(s2,'Web developer')
     arreter(s1,'Player')
+print("---------------\nEND OF THE GAME\n---------------\n")
