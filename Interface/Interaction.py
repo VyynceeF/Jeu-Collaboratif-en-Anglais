@@ -24,16 +24,28 @@ class Interaction :
     
         if (self.noUtilisateur == 1) :
             print('\n----------------------------\n    Choose your question\n----------------------------')
+            user = "Web developer"
         else :
             print('\n----------------------------\n     Choose your answer\n----------------------------')
+            user = "customer"
         questionNo1 = self.graphe.afficher(indice).filsGauche.numero
         questionNo2 = self.graphe.afficher(indice).filsDroit.numero
         print('(1) ' + self.graphe.afficher(indice).filsGauche.texte)
         print('(2) ' + self.graphe.afficher(indice).filsDroit.texte)
         
-        noInteraction = input('What is your choice ? (1 or 2) - ')
-        while noInteraction != "1" and noInteraction != "2" :
-            noInteraction = input('Input error ! What is your choice ? (1 or 2) - ')
+        noInteractionOk = False
+        while (not noInteractionOk) :
+            noInteraction = input('What is your choice ? (1 or 2) - ')
+            # Test si l'entree du joueur est bien egale a '1' ou '2'
+            if (noInteraction == '1' or noInteraction == '2') :
+                # Demande a l'utilisateur s'il valide son choix
+                # Do you want to send choice 1 to the customer ?
+                noInteractionOkUser = input('Do you want to send choice ' + noInteraction + ' to the ' + user + ' ? (YES OR NO) - ')
+                if (noInteractionOkUser == 'YES') :
+                    noInteractionOk = True
+            # Erreur de saisie
+            else : 
+                print('Input error !')
         
         if (noInteraction == "1") :
             indice = self.graphe.afficher(questionNo1).numero
@@ -45,7 +57,7 @@ class Interaction :
     def affiche(self, indice):
         print(self.graphe.afficher(indice).texte)
 
-#interaction = Interaction(Graphe.Graphe())
+
 
 #rep = interaction.questionReponse(0)
 #rep2 = interaction.questionReponse(rep)
