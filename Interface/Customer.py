@@ -47,7 +47,10 @@ def accepter(sockd):
         return(-1)
     else:
         # print('accept() réussi pour le client', coord_C)
-        print('The web developer is connected')
+        print('The web developer is connected\n')
+
+        print("\n----------------------------\n    Start of the game\n----------------------------")
+        # début du jeu 
         return(s)
 
 
@@ -103,6 +106,19 @@ def arreter(s, nom):
 
 interaction = Interaction.Interaction(Graphe.Graphe(), 0)
 cpt = 0
+print("--------------- CONTEXT --------------- \n")
+print("The two players in this game are a developer and a customer. The customer wants to create a website. He calls on an external company specializing in web development and user interfaces to delegate this work. His company does not have the resources to create the website. The web developer contacts the customer\'s to obtain information to optimize the development and better understand the customer's needs.To do this, they use a communication software in which the web developer has already prewritten 10 questions to ask the client. As this software works interactively, the developer and the client have to use it simultaneously. ")
+print("--------------------------------------- \n")
+print("---------------  RULES  --------------- \n")
+print("1.	The Developer chooses between two questions.")
+print("2.	The Developer can choose only one of the two proposed questions.")
+print("3.	The Player answers the question.")
+print("4.	The Player can choose between one of the two proposed answers.")
+print("5.	The Game does not deal with the time to answer questions and ask questions also for the choice of questions for the Developer.")
+print("6.	If the Player leaves the game wildly, then the game stops.")
+print("7.	If the Developer leaves the game wildly, then the game stops.")
+print("8.	The Game ends when the Customer has answered the second question.")
+print("--------------------------------------- \n")
 s1 = preparer()
 on_continue = 0
 if (s1 != -1 ):
@@ -114,3 +130,5 @@ if (s1 != -1 ):
         arreter(s2,'Web developer')
     arreter(s1,'Player')
 print("---------------\nEND OF THE GAME\n---------------\n")
+
+input("Press Enter to quit ?")

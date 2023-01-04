@@ -78,21 +78,34 @@ def arreter(s):
 
 
 # programme principal
+print("--------------- CONTEXT --------------- \n")
+print("The two players in this game are a developer and a customer. The customer wants to create a website. He calls on an external company specializing in web development and user interfaces to delegate this work. His company does not have the resources to create the website. The web developer contacts the customer\'s to obtain information to optimize the development and better understand the customer's needs.To do this, they use a communication software in which the web developer has already prewritten 10 questions to ask the client. As this software works interactively, the developer and the client have to use it simultaneously. ")
+print("--------------------------------------- \n")
+print("---------------  RULES  --------------- \n")
+print("1.	The Developer chooses between two questions.")
+print("2.	The Developer can choose only one of the two proposed questions.")
+print("3.	The Player answers the question.")
+print("4.	The Player can choose between one of the two proposed answers.")
+print("5.	The Game does not deal with the time to answer questions and ask questions also for the choice of questions for the Developer.")
+print("6.	If the Player leaves the game wildly, then the game stops.")
+print("7.	If the Developer leaves the game wildly, then the game stops.")
+print("8.	The Game ends when the Customer has answered the second question.")
+print("--------------------------------------- \n")
 interaction = Interaction.Interaction(Graphe.Graphe(), 1)
 indice = 0
-
 ipDevOk = False
 while (not ipDevOk) :
     ipClient = input('Enter the customer\'s IP address - ')
-    ipDevOk = input("Is the IP address right for you ? (YES OR NO) - ")
+    ipDevOk = input("Are you sure you have entered your IP address ? (YES OR NO) - ")
     
     while (ipDevOk != "YES") :
         ipClient = input('Enter the customer\'s IP address - ')
-        ipDevOk = input("Is the IP address right for you ? (YES OR NO) - ")
+        ipDevOk = input("Are you sure you have entered your IP address ? (YES OR NO) - ")
     
     ipDevOk = True
 
 nbquestion = 0
+
 s = preparer()
 on_continue = 0
 if (s != -1):
@@ -103,3 +116,5 @@ if (s != -1):
         interaction.affiche(indice)
         print("End of the exchange")
     arreter(s)
+
+input("Press Enter to quit ?")
