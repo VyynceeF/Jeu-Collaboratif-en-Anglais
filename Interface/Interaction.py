@@ -1,7 +1,11 @@
 import Graphe
 
 class Interaction :
-
+    
+    # Constructeur qui initialise le graphe pour les questions et le numéro de l'utilisateur : 
+    # 1 = client
+    # 0 = développeur web
+    # Ajoute au graphe un noeud racine initialisé à 0 pour marquer le début du jeu.
     def __init__(self, graphe, noUtilisateur):
     
         self.noUtilisateur = noUtilisateur
@@ -14,6 +18,14 @@ class Interaction :
         for ligne in lignes :
             self.graphe.ajouterNoeud(int(ligne.split(';')[0]), ligne.split(';')[1])
 
+
+
+    # Permet d'afficher en fonction de l'indice soit 
+    #   - choix question/réponse en fonction du noUtilisateur
+    #   - à qui est le tour de jouer
+    #   - affiche les questions/réponses possibles à partir de l'indice
+    #   - demande la saisie d'une réponse 1 ou 2 avec vérification de la saisie en cas d'erreur de l'utilisateur
+    #   retourne le nouvelle indice 
     def questionReponse(self,indice):
     
         if (self.noUtilisateur == 1 and indice != 0) :
@@ -53,7 +65,9 @@ class Interaction :
             indice = self.graphe.afficher(questionNo2).numero
             
         return indice
-     
+    
+    # appelle la méthode afficher de la classe Graphe avec en paramètre l'indice 
+    # qui elle même appelle la méthode afficher de la classe Noeud si la racine n'est pas null.
     def affiche(self, indice):
         print(self.graphe.afficher(indice).texte)
 

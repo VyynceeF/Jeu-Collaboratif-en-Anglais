@@ -6,6 +6,9 @@ separateur = b'|'
 
 global cpt
 
+# permet :   - créer un socket avec une adresse IPv4 et un protocole TCP
+#		     - configurer la socket avec les coordonnées de la machine (@IP) et un port.
+#		     - ensuite écoute 1 machine à la fois.
 def preparer():
     try:
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -18,26 +21,30 @@ def preparer():
         print("--------------------------------------------------------------")
         print("IP address to give to the Web developer - " + socket.gethostbyname(socket.gethostname()))
         print("--------------------------------------------------------------\n")
+        
+        # récupere l'adresse ip et le port d'écoute de le socket
         coord_S = (socket.gethostbyname(socket.gethostname()), 65432)
         try:
+            # initialise le socket avec les coordonnées initialisé précedement (IP,Port)
             s.bind(coord_S)
         except OSError:
             print('bind() failed')
             s.close()
             return(-1)
         else:
-            # print('bind() réussi')
+            # le bind a bien été réussi
             try: 
+                # on écoute une socket à la fois
                 s.listen(1)
             except OSError:
                 print('listen() failed')
                 s.close()
                 return(-1)
             else:
-                # print('listen() réussi')
+                # listen() réussi'
                 return(s)
 
-
+# permet d'accepter connexion à un socket entré en paramétre.
 def accepter(sockd):
     print("Waiting for a web developer")
     try:
@@ -46,25 +53,27 @@ def accepter(sockd):
         print('Failed to connect to Web developer')
         return(-1)
     else:
-        # print('accept() réussi pour le client', coord_C)
+        # accept() réussi pour le client', coord_C)
         print('The web developer is connected\n')
 
-        print("\n----------------------------\n    Start of the game\n----------------------------")
-        # début du jeu 
+        print("\n----------------------------\n    Start of the game\n----------------------------") 
         return(s)
 
-
+# Retranscrit le bloc de donnée en paramétre en une chaine de caractère
 def analyser(bloc):
     # print('Requête reçue = ',bloc.decode())
     return(bloc.decode())
 
-
+# Appelle la classe Interaction pour construire une réponse au message 
 def construire(message):
     rep = interaction.questionReponse(message)
     # print('Construction réponse effectuée')
     return str(rep).encode()
 
-
+# Permet de communiquer avec le  developpeur web, 
+# la méthode attend une réponse du developpeur web 
+#analyse le message reçu et construire la réponse que va recevoir le client.
+# retourne -1 si il y a eu un echec durant la communication sinon retourne 0 
 def echanger(s_comm, cpt):
     code_sortie = 0
     if cpt < 3:
@@ -93,7 +102,7 @@ def echanger(s_comm, cpt):
                 # print('Taille réponse envoyée = ',qte)
                 return(code_sortie)
 
-
+# permet d'arrete le socket mis en paramétre
 def arreter(s, nom):
     try:
         s.close()

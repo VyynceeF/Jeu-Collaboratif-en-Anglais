@@ -4,7 +4,8 @@ TAILLE = 128
 
 separateur = b'|'
 
-
+# Création d'une socket avec une adresse IPv4 et un protocole de type TCP
+# retourne -1 en cas d'erreur
 def preparer():
     try:
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -16,7 +17,9 @@ def preparer():
         # print('Création socket réussie')
         return(s)
 
-
+# Permet de se connecter au serveur en recuperant les coordonnées du client 
+# sockd socket du client
+# ipClient adresse ipv4 du client
 def connecter(sockd, ipClient):
     coord_S = (ipClient, 65432)
     try:
@@ -28,7 +31,8 @@ def connecter(sockd, ipClient):
         # print('Connexion au serveur',coord_S,'réussie')
         return(0)
 
-
+# retourne les 2 réponses possibles pour la question numéro "indice" 
+# à l'aide de la méthode questionReponse(indice) de la classe Interaction
 def construire(indice):
     bloc = interaction.questionReponse(indice)
     print("------------------------------------------")
@@ -38,10 +42,9 @@ def construire(indice):
     return(str(bloc).encode())
 
 
-# def utiliser(bloc):
-    # print('Réponse reçue = ',bloc)
-
-
+# permet d'envoyer la question numéro "indice" 
+# et attends de recevoir une réponse de la part du client 
+# et retourne le numéro de la question si l'échange a été reussi sinon retourne -1
 def echanger(s, indice):
     code_sortie = 0
         
@@ -68,6 +71,7 @@ def echanger(s, indice):
                 return indice
    
 
+# permet de ferme la socket s
 def arreter(s):
     try:
         s.close()
@@ -78,6 +82,7 @@ def arreter(s):
 
 
 # programme principal
+# affichage du context et des regles du jeu 
 print("--------------- CONTEXT --------------- \n")
 print("The two players in this game are a developer and a customer. The customer wants to create a website. He calls on an external company specializing in web development and user interfaces to delegate this work. His company does not have the resources to create the website. The web developer contacts the customer\'s to obtain information to optimize the development and better understand the customer's needs.To do this, they use a communication software in which the web developer has already prewritten 10 questions to ask the client. As this software works interactively, the developer and the client have to use it simultaneously. ")
 print("--------------------------------------- \n")
