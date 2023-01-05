@@ -1,12 +1,16 @@
 class Noeud :
-
+    # Initalise le filsDroit et filsGauche du Noeud courant à null .
+    # Initialise le numéro du noeud et la question ou réponse du Noeud .
     def __init__(self, indice, questionReponse) :
         
         self.texte = questionReponse
         self.numero = int(indice)
         self.filsGauche = None
         self.filsDroit = None
-        
+
+
+    # Effectue une recherche à partir du noeud courant 
+    # pour ajouter le noeud du bon côté de l'arbre.        
     def ajouterNoeud(self, indice, questionReponse) :
         
         if indice < self.numero :
@@ -19,7 +23,9 @@ class Noeud :
                 self.filsDroit = Noeud(indice, questionReponse)
             else :
                 self.filsDroit.ajouterNoeud(indice, questionReponse)
-       
+
+
+    # Affiche la question/reponse au noeud d'indice noATrouver .
     def afficher(self, noATrouver) :
     
         if noATrouver == self.numero :
@@ -37,7 +43,7 @@ class Noeud :
                 return self.filsDroit.afficher(int(noATrouver))
         
         return None
-        
+ 
     def afficheArbreNiveau(self, niveau) :
         
         if (self.filsDroit != None) :

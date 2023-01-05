@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="JEU_COLLABORATIF" version="4">
+  <OBJECT>
+    <ID name="JEU_COLLABORATIF" mc="Standard.Project" uid="326599d2-5627-4cf6-a0fb-0a7598f2d26f"/>
+    <ATTRIBUTES>
+      <ATT name="ProjectContext"></ATT>
+      <ATT name="ProjectDescr"></ATT>
+      <ATT name="Name"><![CDATA[JEU_COLLABORATIF]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="Model">
+        <COMPID name="jeu_collaboratif" mc="Standard.Package" uid="e486e072-a4db-489c-8fa3-673574ea1f63"/>
+      </COMP>
+      <COMP relation="DiagramRoot">
+        <COMPID name="JEU_COLLABORATIF" mc="Infrastructure.DiagramSet" uid="b3a28cd6-7398-4ab4-a4b4-40bcbf96e60a"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>
