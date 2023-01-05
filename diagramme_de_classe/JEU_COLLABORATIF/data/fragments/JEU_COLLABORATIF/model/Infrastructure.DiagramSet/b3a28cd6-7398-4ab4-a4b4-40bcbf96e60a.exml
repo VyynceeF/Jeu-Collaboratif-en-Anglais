@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="JEU_COLLABORATIF" version="4">
+  <OBJECT>
+    <ID name="JEU_COLLABORATIF" mc="Infrastructure.DiagramSet" uid="b3a28cd6-7398-4ab4-a4b4-40bcbf96e60a"/>
+    <PID name="JEU_COLLABORATIF" mc="Standard.Project" uid="326599d2-5627-4cf6-a0fb-0a7598f2d26f"/>
+    <ATTRIBUTES>
+      <ATT name="Name"><![CDATA[JEU_COLLABORATIF]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES></DEPENDENCIES>
+  </OBJECT>
+</EXT>

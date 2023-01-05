@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="jeu_collaboratif" version="4">
+  <OBJECT>
+    <ID name="jeu_collaboratif" mc="Standard.Package" uid="e486e072-a4db-489c-8fa3-673574ea1f63"/>
+    <PID name="JEU_COLLABORATIF" mc="Standard.Project" uid="326599d2-5627-4cf6-a0fb-0a7598f2d26f"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[jeu_collaboratif]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="Customer" mc="Standard.Class" uid="176e2c6d-31b0-47d7-8ba2-1c58bd6185a9"/>
+        <COMPID name="socket" mc="Standard.Interface" uid="32a5d499-27f6-4304-9b56-69102dc5e799"/>
+        <COMPID name="WebDeveloper" mc="Standard.Class" uid="c94e1a1b-ba97-4cd4-9480-89fb5fd59be3"/>
+        <COMPID name="Interraction" mc="Standard.Class" uid="9fd68ec3-64f6-4f65-9623-dd1e08ab7335"/>
+        <COMPID name="Graphe" mc="Standard.Class" uid="8fa08f15-d811-4a8f-9451-74613acc5819"/>
+        <COMPID name="Noeud" mc="Standard.Class" uid="ad841454-be01-4920-ab6e-caa3e4100f88"/>
+      </COMP>
+      <COMP relation="Product">
+        <COMPID name="Diagramme de classe jeu_collaboratif" mc="Standard.ClassDiagram" uid="5fb9838e-502c-4232-94fd-219049d077e0"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>
