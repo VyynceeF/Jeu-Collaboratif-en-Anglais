@@ -33,11 +33,18 @@ class TestNoeud(unittest.TestCase):
     # Vous devrez donc inspecter visuellement la sortie pour déterminer si elle est correcte.
     root = Noeud.Noeud(5, "C'est une question ou une réponse ?")
     root.ajouterNoeud(3, "C'est une question")
+    print("------------------------------------------")
+    print("|Affichage de l'arborescence de l'arbre   |")
+    print("------------------------------------------")
     root.ajouterNoeud(7, "C'est une réponse")
+    
     root.afficheArbreNiveau(0)
 
-if __name__ == '__main__':
-  unittest.main()
+print("------------------------------")
+print("|Test sur la classe Noeud     |")
+print("------------------------------")
 
+if __name__ == '__main__':
+	unittest.main()        
 
 
